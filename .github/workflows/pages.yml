@@ -1,0 +1,39 @@
+# Publica la carpeta src/ en GitHub Pages cada vez que se sube un cambio a main
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # permite publicar a mano desde la pestaña "Actions"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si llegan dos publicaciones a la vez, se hace una detrás de otra
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Preparar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar la carpeta src
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: src
+
+      - name: Publicar
+        id: despliegue
+        uses: actions/deploy-pages@v4
