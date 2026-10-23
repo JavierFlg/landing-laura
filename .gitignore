@@ -1,0 +1,10 @@
+# Archivos que crea el sistema operativo (no son parte del proyecto)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Secretos: nunca se suben a Git
+.env
+
+# Configuración personal del editor
+.vscode/

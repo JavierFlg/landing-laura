@@ -1,0 +1,197 @@
+/* ===== VARIABLES: cambia aquí los colores de toda la página ===== */
+:root {
+  --color-principal: #e85d3f;   /* botones y enlaces */
+  --color-oscuro: #d14a2d;      /* botones al pasar el ratón */
+  --color-texto: #2b2b2b;
+  --color-suave: #6b6b6b;       /* textos secundarios */
+  --color-fondo: #fffaf5;
+  --color-tarjeta: #ffffff;
+  --ancho-maximo: 960px;
+}
+
+/* ===== BASE: reglas que aplican a toda la página ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* desplazamiento suave al pulsar el menú */
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-principal);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--color-tarjeta);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  position: sticky; /* se queda fijo arriba al bajar */
+  top: 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.menu a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: var(--color-suave);
+}
+
+.menu a:hover {
+  color: var(--color-principal);
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--color-suave);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== BOTÓN reutilizable ===== */
+.boton {
+  display: inline-block;
+  background: var(--color-principal);
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.boton:hover {
+  background: var(--color-oscuro);
+}
+
+/* ===== SECCIONES generales ===== */
+.seccion {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ===== TARJETAS de contenido ===== */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* tres columnas en pantallas grandes */
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background: var(--color-tarjeta);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  color: var(--color-suave);
+  margin-bottom: 1rem;
+}
+
+.tarjeta a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== REDES y CONTACTO ===== */
+.redes,
+.contacto {
+  text-align: center;
+}
+
+.lista-redes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lista-redes a {
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--color-principal);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contacto p {
+  margin-bottom: 1.5rem;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.pie {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== MÓVIL: reglas para pantallas de menos de 700px ===== */
+@media (max-width: 700px) {
+  .encabezado {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    margin: 0 0.6rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr; /* una sola columna en móvil */
+  }
+}
