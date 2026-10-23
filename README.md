@@ -3,7 +3,9 @@
 Página de presentación para un creador de contenido: quién es, qué publica,
 dónde seguirlo y cómo contactarlo.
 
-## Cómo verla
+**Página publicada:** https://javierflg.github.io/landing-laura/
+
+## Cómo verla en tu computadora
 
 1. Abre la carpeta `src/`.
 2. Haz doble clic en `index.html`. Se abrirá en tu navegador.
@@ -28,3 +30,16 @@ No hace falta instalar nada: es HTML y CSS puro.
 - **Textos**: edita `src/index.html` (busca los comentarios `<!-- -->`).
 - **Colores**: cambia las variables al inicio de `src/styles.css`.
 - **Foto**: reemplaza `src/img/avatar.svg` por una foto y actualiza la ruta en `index.html`.
+
+## Cómo publicar cambios
+
+Cada vez que subes cambios a la rama `main`, GitHub publica la carpeta `src/`
+automáticamente (lo hace `.github/workflows/pages.yml`):
+
+```
+git add .
+git commit -m "Describe qué cambiaste"
+git push
+```
+
+En uno o dos minutos la página publicada se actualiza.
