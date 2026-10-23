@@ -5,3 +5,4 @@
 - El código vive en `src/`. Los comentarios del código van en español.
 - Los colores se definen como variables en `:root` dentro de `src/styles.css`.
 - La página debe verse bien en móvil (probar a 375px de ancho).
+- Al empezar una sesión, lee `PENDIENTES.md` para saber dónde nos quedamos. Al terminar, actualízalo (marca lo hecho y anota lo nuevo).
