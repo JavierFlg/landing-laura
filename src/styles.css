@@ -1,10 +1,10 @@
 /* ===== VARIABLES: cambia aquí los colores de toda la página ===== */
 :root {
-  --color-principal: #e85d3f;   /* botones y enlaces */
-  --color-oscuro: #d14a2d;      /* botones al pasar el ratón */
-  --color-texto: #2b2b2b;
-  --color-suave: #6b6b6b;       /* textos secundarios */
-  --color-fondo: #fffaf5;
+  --color-principal: #2563eb;   /* botones y enlaces */
+  --color-oscuro: #1d4ed8;      /* botones al pasar el ratón */
+  --color-texto: #1e293b;
+  --color-suave: #64748b;       /* textos secundarios */
+  --color-fondo: #f5f8ff;
   --color-tarjeta: #ffffff;
   --ancho-maximo: 960px;
 }
