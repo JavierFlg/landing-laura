@@ -17,6 +17,7 @@
     <nav class="menu">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#contenido">Contenido</a>
+      <a href="#galeria">Galería</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -62,6 +63,88 @@
         </article>
       </div>
     </section>
+
+    <!-- GALERÍA: miniaturas; al hacer clic, la foto se abre en grande -->
+    <section id="galeria" class="seccion">
+      <h2>Galería</h2>
+      <div class="galeria">
+        <a href="#foto-1" class="galeria-item">
+          <img src="img/g-1.jpeg" alt="Ilustración de cinco personajes jugando un juego de mesa de detectives en una mansión antigua" loading="lazy">
+          <span>Misterio en la mansión</span>
+        </a>
+        <a href="#foto-2" class="galeria-item">
+          <img src="img/g-2.jpeg" alt="León mojado caminando por la sabana bajo una tormenta con relámpagos" loading="lazy">
+          <span>León bajo la tormenta</span>
+        </a>
+        <a href="#foto-3" class="galeria-item">
+          <img src="img/g-3.jpeg" alt="Viñetas de cómic de una chica que huye de un monstruo en un bosque oscuro" loading="lazy">
+          <span>Cómic de terror</span>
+        </a>
+        <a href="#foto-4" class="galeria-item">
+          <img src="img/g-4.jpeg" alt="Paisaje surrealista con una taza gigante, un reloj, una torre de libros y puentes entre las nubes" loading="lazy">
+          <span>Mundo surrealista</span>
+        </a>
+        <a href="#foto-5" class="galeria-item">
+          <img src="img/g-5.jpeg" alt="Reloj despertador antiguo, libro viejo, llave e hilo sobre una mesa de madera" loading="lazy">
+          <span>Recuerdos antiguos</span>
+        </a>
+        <a href="#foto-6" class="galeria-item">
+          <img src="img/g-6.jpeg" alt="Pintura en acuarela de una persona caminando entre árboles sin hojas en un paisaje nevado" loading="lazy">
+          <span>Acuarela de invierno</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- VENTANAS AMPLIADAS: están ocultas y aparecen cuando la dirección
+         termina en #foto-1, #foto-2, etc. "Cerrar" vuelve a #galeria -->
+    <div id="foto-1" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-1.jpeg" alt="Ilustración de cinco personajes jugando un juego de mesa de detectives en una mansión antigua">
+        <figcaption>Misterio en la mansión</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
+    <div id="foto-2" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-2.jpeg" alt="León mojado caminando por la sabana bajo una tormenta con relámpagos">
+        <figcaption>León bajo la tormenta</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
+    <div id="foto-3" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-3.jpeg" alt="Viñetas de cómic de una chica que huye de un monstruo en un bosque oscuro">
+        <figcaption>Cómic de terror</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
+    <div id="foto-4" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-4.jpeg" alt="Paisaje surrealista con una taza gigante, un reloj, una torre de libros y puentes entre las nubes">
+        <figcaption>Mundo surrealista</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
+    <div id="foto-5" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-5.jpeg" alt="Reloj despertador antiguo, libro viejo, llave e hilo sobre una mesa de madera">
+        <figcaption>Recuerdos antiguos</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
+    <div id="foto-6" class="ampliada">
+      <a href="#galeria" class="ampliada-fondo" aria-label="Cerrar"></a>
+      <figure>
+        <img src="img/g-6.jpeg" alt="Pintura en acuarela de una persona caminando entre árboles sin hojas en un paisaje nevado">
+        <figcaption>Acuarela de invierno</figcaption>
+      </figure>
+      <a href="#galeria" class="ampliada-cerrar" aria-label="Cerrar">×</a>
+    </div>
 
     <!-- REDES SOCIALES: enlaces a cada plataforma -->
     <section class="seccion redes">

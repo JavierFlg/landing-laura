@@ -1,10 +1,10 @@
 /* ===== VARIABLES: cambia aquí los colores de toda la página ===== */
 :root {
-  --color-principal: #2563eb;   /* botones y enlaces */
-  --color-oscuro: #1d4ed8;      /* botones al pasar el ratón */
+  --color-principal: #db2777;   /* botones y enlaces (rosa) */
+  --color-oscuro: #be185d;      /* botones al pasar el ratón */
   --color-texto: #1e293b;
-  --color-suave: #64748b;       /* textos secundarios */
-  --color-fondo: #f5f8ff;
+  --color-suave: #4b5563;       /* textos secundarios (más oscuro para leerse bien sobre el verde) */
+  --color-fondo: #e3f5c6;       /* fondo verde lima claro */
   --color-tarjeta: #ffffff;
   --ancho-maximo: 960px;
 }
@@ -46,6 +46,7 @@ h2 {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   position: sticky; /* se queda fijo arriba al bajar */
   top: 0;
+  z-index: 5;       /* por encima de las fotos de la galería */
 }
 
 .logo {
@@ -143,6 +144,105 @@ h2 {
   text-decoration: none;
 }
 
+/* ===== GALERÍA de imágenes ===== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* tres fotos por fila */
+  gap: 1rem;
+}
+
+.galeria-item {
+  position: relative; /* para colocar el texto encima de la foto */
+  display: block;
+  overflow: hidden;   /* recorta la foto cuando hace zoom */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.galeria-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* todas las fotos con la misma forma */
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+/* Texto sobre la foto con una franja oscura degradada */
+.galeria-item span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 0;          /* oculto hasta pasar el ratón */
+  transition: opacity 0.3s;
+}
+
+/* Al pasar el ratón: la foto se acerca y aparece el texto */
+.galeria-item:hover img {
+  transform: scale(1.06);
+}
+
+.galeria-item:hover span {
+  opacity: 1;
+}
+
+/* Ventana con la foto en grande: oculta por defecto */
+.ampliada {
+  display: none;
+  position: fixed;  /* cubre toda la pantalla */
+  inset: 0;
+  z-index: 10;      /* por encima del encabezado */
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* :target = la ventana cuyo id aparece en la dirección (#foto-1...) */
+.ampliada:target {
+  display: flex;
+}
+
+/* Fondo oscuro; al hacer clic en él se cierra */
+.ampliada-fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.ampliada figure {
+  position: relative; /* para quedar por encima del fondo */
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.ampliada figure img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.ampliada figcaption {
+  color: #ffffff;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.ampliada-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  color: #ffffff;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
 /* ===== REDES y CONTACTO ===== */
 .redes,
 .contacto {
@@ -160,6 +260,7 @@ h2 {
   padding: 0.6rem 1.4rem;
   border: 2px solid var(--color-principal);
   border-radius: 999px;
+  color: var(--color-oscuro); /* rosa oscuro: se lee mejor sobre el verde */
   text-decoration: none;
   font-weight: 600;
 }
@@ -183,8 +284,16 @@ h2 {
     gap: 0.5rem;
   }
 
+  /* Menú centrado; si no cabe, baja de línea de forma ordenada */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+  }
+
   .menu a {
-    margin: 0 0.6rem;
+    margin: 0;
   }
 
   .hero h1 {
@@ -193,5 +302,16 @@ h2 {
 
   .tarjetas {
     grid-template-columns: 1fr; /* una sola columna en móvil */
+  }
+
+  .galeria {
+    grid-template-columns: repeat(2, 1fr); /* dos fotos por fila en móvil */
+  }
+
+  /* En móvil no hay ratón: el texto de cada foto se ve siempre */
+  .galeria-item span {
+    opacity: 1;
+    font-size: 0.85rem;
+    padding: 1rem 0.6rem 0.5rem;
   }
 }

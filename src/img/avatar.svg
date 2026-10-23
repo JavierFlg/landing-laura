@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-label="Avatar de ejemplo">
   <!-- Imagen provisional: reemplázala por una foto real -->
-  <rect width="140" height="140" fill="#dbe6fe"/>
-  <circle cx="70" cy="55" r="26" fill="#2563eb"/>
-  <path d="M22 140c4-30 24-46 48-46s44 16 48 46z" fill="#2563eb"/>
+  <rect width="140" height="140" fill="#fce7f3"/>
+  <circle cx="70" cy="55" r="26" fill="#db2777"/>
+  <path d="M22 140c4-30 24-46 48-46s44 16 48 46z" fill="#db2777"/>
 </svg>
